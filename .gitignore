@@ -1,0 +1,8 @@
+__pycache__/
+.claws/
+*.py[cod]
+*.db
+.venv/
+.env
+.pytest_cache/
+.coverage
