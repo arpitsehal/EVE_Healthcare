@@ -10,8 +10,10 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 $env:JWT_SECRET_KEY = "replace-with-a-long-random-secret"
 $env:WEBHOOK_SECRET = "replace-with-a-separate-random-secret"
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
+
+If `uvicorn` isn't installed as a standalone script on your `PATH`, run it via `python -m uvicorn` as above; this works as long as the package is installed, regardless of `PATH`.
 
 Without `DATABASE_URL`, the service creates `eve_healthcare.db` in the current directory. Tables are created on startup. Open `http://127.0.0.1:8000/docs` for interactive OpenAPI docs; `/health` is the health check.
 
